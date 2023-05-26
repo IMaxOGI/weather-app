@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CityCard = () => {
+const CityDetail = () => {
     return (
         <div></div>
     )
 }
 
-export default CityCard
+export default CityDetail
