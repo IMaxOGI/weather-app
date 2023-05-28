@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { RootState } from '../store';
 
 export const fetchWeatherForCity = createAsyncThunk(
     'cities/fetchWeather',
@@ -8,6 +9,23 @@ export const fetchWeatherForCity = createAsyncThunk(
             `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=77c95e9192af44d04f364f7dc1286ed9`
         );
         return response.data;
+    }
+);
+
+export const updateCityWeather = createAsyncThunk(
+    'cities/updateWeather',
+    async (cityId: number, thunkAPI) => {
+        const state = thunkAPI.getState() as RootState;
+        const city = state.city.cities.find((city: City) => city.id === cityId);
+
+        if (!city) {
+            throw new Error('City not found');
+        }
+
+        const response = await axios.get(
+            `http://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=77c95e9192af44d04f364f7dc1286ed9`
+        );
+        return { cityId, data: response.data };
     }
 );
 
@@ -52,6 +70,12 @@ export const citySlice = createSlice({
             .addCase(fetchWeatherForCity.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message || null;
+            })
+            .addCase(updateCityWeather.fulfilled, (state, action) => {
+                const existingCity = state.cities.find(city => city.id === action.payload.cityId)
+                if (existingCity) {
+                    existingCity.weather = action.payload.data.weather;
+                }
             });
     },
 });
