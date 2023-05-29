@@ -5,7 +5,7 @@ import CityDetail from './components/CityDetail';
 
 const App: React.FC = () => {
     return (
-        <Router basename="/weather-app">
+        <Router basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path="/detail/:city" element={<CityDetail />} />
                 <Route path="/" element={<CityList />} />
