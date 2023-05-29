@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 import { useDispatch as useReduxDispatch } from 'react-redux';
-import { removeCity, updateCityWeather } from '../../services/slices/CitySlice';
+import { removeCity, updateCityWeather } from '../../services/slices/сitySlice';
 import { useNavigate } from 'react-router-dom';
 import { AppDispatch } from '../../services/store';
 import { kelvinToCelsius } from "../../services/kelvinToCelsius";
@@ -22,6 +22,7 @@ interface CityCardProps {
         };
     };
 }
+
 
 const CityCard: React.FC<CityCardProps> = ({ city }) => {
     const useDispatch = () => useReduxDispatch<AppDispatch>();

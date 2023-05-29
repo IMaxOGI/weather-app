@@ -1,6 +1,6 @@
 import { AppDispatch } from "./store";
 import axios from 'axios';
-import { fetchWeatherForCity } from "./slices/CitySlice";
+import { fetchWeatherForCity } from "./slices/сitySlice";
 
 export const fetchInitialCities = async (dispatch: AppDispatch) => {
     const storedCities = JSON.parse(localStorage.getItem('cities') || '[]');
@@ -11,7 +11,7 @@ export const fetchInitialCities = async (dispatch: AppDispatch) => {
             );
 
             const response = await axios.get(
-                `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=77c95e9192af44d04f364f7dc1286ed9`
+                `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=425107192997d3e9ce6be2c05c915cef`
             );
 
             dispatch(fetchWeatherForCity(response.data.name));

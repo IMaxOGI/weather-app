@@ -1,5 +1,5 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import cityReducer from "./slices/CitySlice"
+import cityReducer from "./slices/сitySlice"
 import { loadState, saveState } from './localStorage';
 
 const persistedState = loadState();

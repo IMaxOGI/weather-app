@@ -1,21 +1,21 @@
-import React from 'react';
-import { Typography, Card, CardContent, Box } from '@mui/material';
+import React, { useEffect } from 'react';
+import { Typography, Card, CardContent, Box, List, ListItem, ListItemText } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../services/store';
-import {kelvinToCelsius} from "../../services/kelvinToCelsius";
-
-interface WeatherData {
-    id: number;
-    main: string;
-    description: string;
-    icon: string;
-}
+import { kelvinToCelsius } from "../../services/kelvinToCelsius";
+import { fetchHourlyForecastForCity } from '../../services/slices/сitySlice';
+import { AppDispatch } from "../../services/store";
 
 interface CityData {
     id: number;
     name: string;
-    weather: WeatherData[];
+    weather: {
+        id: number;
+        main: string;
+        description: string;
+        icon: string;
+    }[];
     main: {
         temp: number;
         feels_like: number;
@@ -24,20 +24,36 @@ interface CityData {
         pressure: number;
         humidity: number;
     };
-    wind: {
+    wind?: {
         speed: number;
         deg: number;
     };
-    clouds: {
+    clouds?: {
         all: number;
     };
+    forecast: any[];
+    lastUpdated: Date | null;
 }
 
-const CityDetail: React.FC = () => {
+const CityDetail = () => {
+    const dispatch: AppDispatch = useDispatch();
     const { city: cityName } = useParams<{ city: string }>();
     const city = useSelector((state: RootState) =>
         state.city.cities.find((city: any) => city.name === cityName)
     ) as CityData;
+
+
+    useEffect(() => {
+        if (city) {
+            const oneHour = 60 * 60 * 1000;
+            const needsUpdate =
+                city?.lastUpdated &&
+                new Date().getTime() - city.lastUpdated.getTime() > oneHour;
+            if (!city.forecast || needsUpdate) {
+                dispatch(fetchHourlyForecastForCity(city.name));
+            }
+        }
+    }, [city, dispatch]);
 
     if (!city) {
         return <Typography variant="h5">City not found</Typography>;
@@ -79,15 +95,40 @@ const CityDetail: React.FC = () => {
                 <Typography variant="body2">
                     Humidity: {city.main.humidity}%
                 </Typography>
-                <Typography variant="body2">
-                    Wind Speed: {city.wind.speed} m/s
-                </Typography>
-                <Typography variant="body2">
-                    Wind Direction: {city.wind.deg}°
-                </Typography>
-                <Typography variant="body2">
-                    Cloudiness: {city.clouds.all}%
-                </Typography>
+                {city.wind && (
+                    <Typography variant="body2">
+                        Wind Speed: {city.wind.speed} m/s
+                    </Typography>
+                )}
+                {city.wind && (
+                    <Typography variant="body2">
+                        Wind Direction: {city.wind.deg}°
+                    </Typography>
+                )}
+                {city.clouds && (
+                    <Typography variant="body2">
+                        Cloudiness: {city.clouds.all}%
+                    </Typography>
+                )}
+                <Box display="flex" flexDirection="column">
+                    <Typography variant="body2">
+                        Hourly Forecast:
+                    </Typography>
+                    <Box sx={{ marginTop: 3 }}>
+                        <Typography variant="h6" gutterBottom>
+                            Hourly Forecast:
+                        </Typography>
+                        <List>
+                            {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
+                                <ListItem key={index}>
+                                    <ListItemText
+                                        primary={`${new Date(forecast.dt * 1000).toLocaleTimeString()}: ${kelvinToCelsius(forecast.main.temp).toFixed(2)}°C`}
+                                    />
+                                </ListItem>
+                            ))}
+                        </List>
+                    </Box>
+                </Box>
             </CardContent>
         </Card>
     );

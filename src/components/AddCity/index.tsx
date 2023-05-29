@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, TextField, Box } from '@mui/material';
 import { AppDispatch } from "../../services/store";
 import { useDispatch } from "react-redux";
-import { fetchWeatherForCity } from "../../services/slices/CitySlice";
+import { fetchWeatherForCity } from "../../services/slices/сitySlice";
 
 const AddCity = () => {
     const dispatch: AppDispatch = useDispatch();
