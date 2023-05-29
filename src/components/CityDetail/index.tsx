@@ -3,10 +3,9 @@ import { Typography, Card, CardContent, Box, List, ListItem, ListItemText } from
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../services/store';
-import { kelvinToCelsius } from "../../services/kelvinToCelsius";
+import { formatLocalTime, kelvinToCelsius } from "../../services/utils";
 import { fetchHourlyForecastForCity } from '../../services/slices/сitySlice';
 import { AppDispatch } from "../../services/store";
-
 
 const CityDetail = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -14,7 +13,6 @@ const CityDetail = () => {
     const city = useSelector((state: RootState) =>
         state.city.cities.find((city: any) => city.name === cityName)
     );
-
 
     useEffect(() => {
         if (city) {
@@ -29,13 +27,11 @@ const CityDetail = () => {
         }
     }, [city, dispatch]);
 
-
-
-
     if (!city) {
         return <Typography variant="h5">City not found</Typography>;
     }
 
+    const timeString = formatLocalTime(city.timezone);
     const temperature = kelvinToCelsius(city.main.temp);
     const feelsLike = kelvinToCelsius(city.main.feels_like);
     const tempMin = kelvinToCelsius(city.main.temp_min);
@@ -45,7 +41,7 @@ const CityDetail = () => {
         <Card sx={{ minWidth: 275, marginTop: 2 }}>
             <CardContent>
                 <Typography variant="h5" gutterBottom>
-                    {city.name}
+                    {city.name} ({timeString})
                 </Typography>
                 <Typography variant="subtitle1" gutterBottom>
                     Weather: {city.weather[0].description}
@@ -92,7 +88,7 @@ const CityDetail = () => {
                         <Typography variant="h6" gutterBottom>
                             Hourly Forecast:
                         </Typography>
-                        <List sx={{display: "flex"}}>
+                        <List sx={{ display: "flex" }}>
                             {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
                                 <ListItem key={index}>
                                     <ListItemText

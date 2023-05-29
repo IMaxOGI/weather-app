@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityCard/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityList/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/kelvinToCelsius.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,24 +68,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "//wsl$/Ubuntu/home/maxog/projects/weather-app/public",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "\\\\wsl$\\Ubuntu\\home\\maxog\\projects\\weather-app\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl$/Ubuntu/home/maxog/projects/weather-app/public&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;\\\\wsl$\\Ubuntu\\home\\maxog\\projects\\weather-app\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="\\wsl$\Ubuntu\home\maxog\projects\weather-app\public" />
@@ -100,6 +104,7 @@
       <workItem from="1685287576459" duration="10384000" />
       <workItem from="1685304412040" duration="11194000" />
       <workItem from="1685316904510" duration="23472000" />
+      <workItem from="1685380382086" duration="2557000" />
     </task>
     <task id="LOCAL-00001" summary="add initial components and store">
       <created>1685130369274</created>

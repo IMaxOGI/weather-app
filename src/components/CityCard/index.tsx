@@ -4,7 +4,7 @@ import { useDispatch as useReduxDispatch } from 'react-redux';
 import { removeCity, updateCityWeather } from '../../services/slices/сitySlice';
 import { useNavigate } from 'react-router-dom';
 import { AppDispatch } from '../../services/store';
-import { kelvinToCelsius } from "../../services/kelvinToCelsius";
+import {formatLocalTime, kelvinToCelsius} from "../../services/utils";
 
 interface CityCardProps {
     city: {
@@ -20,14 +20,16 @@ interface CityCardProps {
             temp_min: number;
             temp_max: number;
         };
+        timezone: number;
     };
 }
-
 
 const CityCard: React.FC<CityCardProps> = ({ city }) => {
     const useDispatch = () => useReduxDispatch<AppDispatch>();
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
+    const timeString = formatLocalTime(city.timezone);
 
     const handleRemove = (event: React.MouseEvent) => {
         event.stopPropagation();
@@ -54,7 +56,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
         <Card onClick={handleClick} sx={{ minWidth: 275, marginTop: "15px", cursor: 'pointer' }}>
             <CardContent>
                 <Typography variant="h6" gutterBottom>
-                    {city.name}
+                    {city.name} ({timeString})
                 </Typography>
                 <Typography variant="body2" gutterBottom>
                     Weather: {city.weather[0].description}

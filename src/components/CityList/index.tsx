@@ -24,6 +24,7 @@ interface Main {
 interface CityData {
     id: number;
     name: string;
+    timezone: number,
     weather: Weather[];
     main: Main;
     forecast: any;

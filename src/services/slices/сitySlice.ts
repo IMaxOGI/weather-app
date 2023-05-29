@@ -58,6 +58,7 @@ interface MainData {
 export interface City {
     id: number;
     name: string;
+    timezone: number;
     weather: WeatherData[];
     main: MainData;
     clouds?: {
@@ -107,6 +108,7 @@ export const citySlice = createSlice({
                         main: action.payload.main,
                         wind: action.payload.wind,
                         clouds: action.payload.clouds,
+                        timezone: action.payload.timezone,
                         forecast: [],
                         lastUpdated: null,
                     };
@@ -123,6 +125,7 @@ export const citySlice = createSlice({
                     city.weather = action.payload.data.weather;
                     city.main = action.payload.data.main;
                     city.wind = action.payload.data.wind;
+                    city.timezone = action.payload.data.timezone;
                     city.clouds = action.payload.data.clouds;
                 }
             })
@@ -130,7 +133,7 @@ export const citySlice = createSlice({
                 const existingCity = state.cities.find(city => city.name === action.payload.city.name)
                 if (existingCity) {
                     existingCity.forecast = action.payload.list;
-                    existingCity.lastUpdated = new Date().getTime(); // Изменение здесь
+                    existingCity.lastUpdated = new Date().getTime();
                 }
             });
     },
