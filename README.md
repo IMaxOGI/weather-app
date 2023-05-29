@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Weather App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Weather App is a weather display application built with React.js and TypeScript. It allows the user to add cities to track the weather and provides detailed weather information for each city, including maximum and minimum temperatures, wind speed, and cloudiness.
 
-## Available Scripts
+## Key Features
 
-In the project directory, you can run:
+- Add cities for weather tracking.
+- Display detailed weather information for a selected city by clicking on its weather card.
+- Remove cities from the tracking list.
 
-### `npm start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application is developed using the following technologies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React.js
+- TypeScript
+- Redux Toolkit
+- MUI (Material UI)
+- Emotion
+- Axios
 
-### `npm test`
+## Installation and Running
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Ensure that you have Node.js and npm installed. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing Dependencies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Navigate to the root directory of the project and run the following command:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+This command will install all necessary dependencies as specified in the `package.json` file.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Running the Application
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After installing all dependencies, you can run the application using the following command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The application will run on port 3000. You can access it by navigating to `http://localhost:3000` on your browser.
 
-## Learn More
+## How to Use
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After running the application, you can add cities for weather tracking. To do this, enter the city name in the "Add City" field and press the "Add" button. The city will then appear on the tracking list.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To view detailed weather information for a city, click on its card. You will see detailed weather information, including maximum and minimum temperatures, wind speed, and cloudiness.
+
+To remove a city from the tracking list, press the "Remove" button on its card.
+
+## License
+
+This project is licensed under the MIT License - see the `LICENSE.md` file for details.
