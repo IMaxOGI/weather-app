@@ -18,16 +18,19 @@ const CityDetail = () => {
 
     useEffect(() => {
         if (city) {
-            const oneHour = 60 * 60 * 1000;
+            const halfHour = 30 * 60 * 1000;
+            const lastUpdated = city.lastUpdated ? new Date(city.lastUpdated) : null;
             const needsUpdate =
-                city?.lastUpdated &&
-                new Date().getTime() - city.lastUpdated.getTime() > oneHour;
+                !city.lastUpdated ||
+                (lastUpdated && (new Date().getTime() - lastUpdated.getTime() > halfHour));
             if (!city.forecast || needsUpdate) {
-                console.log(city);
                 dispatch(fetchHourlyForecastForCity(city.name));
             }
         }
     }, [city, dispatch]);
+
+
+
 
     if (!city) {
         return <Typography variant="h5">City not found</Typography>;
@@ -49,10 +52,10 @@ const CityDetail = () => {
                 </Typography>
                 <Box display="flex" justifyContent="space-between">
                     <Typography variant="body2">
-                        Temperature: {temperature.toFixed(2)}°C
+                        Max Temperature: {tempMax.toFixed(2)}°C
                     </Typography>
                     <Typography variant="body2">
-                        Feels Like: {feelsLike.toFixed(2)}°C
+                        Temperature: {temperature.toFixed(2)}°C
                     </Typography>
                 </Box>
                 <Box display="flex" justifyContent="space-between">
@@ -60,7 +63,7 @@ const CityDetail = () => {
                         Min Temperature: {tempMin.toFixed(2)}°C
                     </Typography>
                     <Typography variant="body2">
-                        Max Temperature: {tempMax.toFixed(2)}°C
+                        Feels Like: {feelsLike.toFixed(2)}°C
                     </Typography>
                 </Box>
                 <Typography variant="body2">
@@ -85,14 +88,11 @@ const CityDetail = () => {
                     </Typography>
                 )}
                 <Box display="flex" flexDirection="column">
-                    <Typography variant="body2">
-                        Hourly Forecast:
-                    </Typography>
                     <Box sx={{ marginTop: 3 }}>
                         <Typography variant="h6" gutterBottom>
                             Hourly Forecast:
                         </Typography>
-                        <List>
+                        <List sx={{display: "flex"}}>
                             {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
                                 <ListItem key={index}>
                                     <ListItemText

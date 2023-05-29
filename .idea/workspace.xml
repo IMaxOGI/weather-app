@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.32526575.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.32526575.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/static/js/main.32526575.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddCity/AddCity.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityCard/CityCard.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityDetail/CityDetail.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CityList/CityList.test.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +29,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2QKG0ILqLayVP7Hgrh6QMGFA1Kn" />
   <component name="ProjectLevelVcsManager">
@@ -71,7 +70,7 @@
       <workItem from="1685130147519" duration="8237000" />
       <workItem from="1685287576459" duration="10384000" />
       <workItem from="1685304412040" duration="11194000" />
-      <workItem from="1685316904510" duration="8457000" />
+      <workItem from="1685316904510" duration="19082000" />
     </task>
     <task id="LOCAL-00001" summary="add initial components and store">
       <created>1685130369274</created>
@@ -101,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685324587726</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="some add and fix">
+      <created>1685349735492</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685349735492</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

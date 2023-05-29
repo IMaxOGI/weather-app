@@ -35,7 +35,6 @@ export const fetchHourlyForecastForCity = createAsyncThunk(
         const response = await axios.get(
             `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
         );
-        console.log(response.data);
         return response.data;
     }
 );
@@ -69,7 +68,7 @@ export interface City {
         deg: number;
     };
     forecast: any;
-    lastUpdated: Date | null;
+    lastUpdated: number | null;
 }
 
 interface CityState {
@@ -106,8 +105,10 @@ export const citySlice = createSlice({
                         name: action.payload.name,
                         weather: action.payload.weather,
                         main: action.payload.main,
+                        wind: action.payload.wind,
+                        clouds: action.payload.clouds,
                         forecast: [],
-                        lastUpdated: null, // добавлено
+                        lastUpdated: null,
                     };
                     state.cities.push(newCity);
                 }
@@ -121,13 +122,15 @@ export const citySlice = createSlice({
                 if (city) {
                     city.weather = action.payload.data.weather;
                     city.main = action.payload.data.main;
+                    city.wind = action.payload.data.wind;
+                    city.clouds = action.payload.data.clouds;
                 }
             })
             .addCase(fetchHourlyForecastForCity.fulfilled, (state, action) => {
                 const existingCity = state.cities.find(city => city.name === action.payload.city.name)
                 if (existingCity) {
                     existingCity.forecast = action.payload.list;
-                    existingCity.lastUpdated = new Date(); // добавлено
+                    existingCity.lastUpdated = new Date().getTime(); // Изменение здесь
                 }
             });
     },
