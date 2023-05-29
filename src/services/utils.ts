@@ -4,5 +4,6 @@ export const kelvinToCelsius = (temp: number) => {
 
 export const formatLocalTime = (timezone: number): string => {
     const localTime = new Date(new Date().getTime() + timezone * 1000);
-    return localTime.toTimeString().split(' ')[0].substring(0, 5);
+    return localTime.toISOString().split('T')[1].substring(0, 5);
 };
+
