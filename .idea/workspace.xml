@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/manifest.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,7 @@
       <workItem from="1685130147519" duration="8237000" />
       <workItem from="1685287576459" duration="10384000" />
       <workItem from="1685304412040" duration="11194000" />
-      <workItem from="1685316904510" duration="22045000" />
+      <workItem from="1685316904510" duration="22374000" />
     </task>
     <task id="LOCAL-00001" summary="add initial components and store">
       <created>1685130369274</created>
