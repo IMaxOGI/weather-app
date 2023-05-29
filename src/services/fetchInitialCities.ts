@@ -11,7 +11,7 @@ export const fetchInitialCities = async (dispatch: AppDispatch) => {
             );
 
             const response = await axios.get(
-                `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=425107192997d3e9ce6be2c05c915cef`
+                `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=425107192997d3e9ce6be2c05c915cef`
             );
 
             dispatch(fetchWeatherForCity(response.data.name));

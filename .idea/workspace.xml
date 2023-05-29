@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddCity/AddCity.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityCard/CityCard.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityDetail/CityDetail.test.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityList/CityList.test.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/fetchInitialCities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/fetchInitialCities.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,10 +16,38 @@
   </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="gh-pages" />
+                    <option name="lastUsedInstant" value="1685375098" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1685373166" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,7 +71,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "gh-pages",
     "last_opened_file_path": "//wsl$/Ubuntu/home/maxog/projects/weather-app",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -70,7 +94,7 @@
       <workItem from="1685130147519" duration="8237000" />
       <workItem from="1685287576459" duration="10384000" />
       <workItem from="1685304412040" duration="11194000" />
-      <workItem from="1685316904510" duration="19082000" />
+      <workItem from="1685316904510" duration="23472000" />
     </task>
     <task id="LOCAL-00001" summary="add initial components and store">
       <created>1685130369274</created>
@@ -107,7 +131,49 @@
       <option name="project" value="LOCAL" />
       <updated>1685349735492</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="some add and fix">
+      <created>1685370995333</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685370995333</updated>
+    </task>
+    <task id="LOCAL-00007" summary="some add and fix">
+      <created>1685371015758</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685371015758</updated>
+    </task>
+    <task id="LOCAL-00008" summary="some add and fix">
+      <created>1685374888421</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685374888421</updated>
+    </task>
+    <task id="LOCAL-00009" summary="some add and fix">
+      <created>1685375986653</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685375986653</updated>
+    </task>
+    <task id="LOCAL-00010" summary="some add and fix">
+      <created>1685376170944</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685376170944</updated>
+    </task>
+    <task id="LOCAL-00011" summary="some add and fix">
+      <created>1685376667740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685376667740</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
