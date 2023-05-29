@@ -35,6 +35,7 @@ export const fetchHourlyForecastForCity = createAsyncThunk(
         const response = await axios.get(
             `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
         );
+        console.log(response.data);
         return response.data;
     }
 );

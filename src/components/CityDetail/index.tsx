@@ -7,40 +7,13 @@ import { kelvinToCelsius } from "../../services/kelvinToCelsius";
 import { fetchHourlyForecastForCity } from '../../services/slices/сitySlice';
 import { AppDispatch } from "../../services/store";
 
-interface CityData {
-    id: number;
-    name: string;
-    weather: {
-        id: number;
-        main: string;
-        description: string;
-        icon: string;
-    }[];
-    main: {
-        temp: number;
-        feels_like: number;
-        temp_min: number;
-        temp_max: number;
-        pressure: number;
-        humidity: number;
-    };
-    wind?: {
-        speed: number;
-        deg: number;
-    };
-    clouds?: {
-        all: number;
-    };
-    forecast: any[];
-    lastUpdated: Date | null;
-}
 
 const CityDetail = () => {
     const dispatch: AppDispatch = useDispatch();
     const { city: cityName } = useParams<{ city: string }>();
     const city = useSelector((state: RootState) =>
         state.city.cities.find((city: any) => city.name === cityName)
-    ) as CityData;
+    );
 
 
     useEffect(() => {
@@ -50,6 +23,7 @@ const CityDetail = () => {
                 city?.lastUpdated &&
                 new Date().getTime() - city.lastUpdated.getTime() > oneHour;
             if (!city.forecast || needsUpdate) {
+                console.log(city);
                 dispatch(fetchHourlyForecastForCity(city.name));
             }
         }
