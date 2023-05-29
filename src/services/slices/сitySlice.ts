@@ -6,7 +6,7 @@ export const fetchWeatherForCity = createAsyncThunk(
     'cities/fetchWeather',
     async (city: string) => {
         const response = await axios.get(
-            `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
         );
         return response.data;
     }
@@ -23,7 +23,7 @@ export const updateCityWeather = createAsyncThunk(
         }
 
         const response = await axios.get(
-            `http://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=425107192997d3e9ce6be2c05c915cef`
+            `https://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=425107192997d3e9ce6be2c05c915cef`
         );
         return { cityId, data: response.data };
     }
@@ -33,7 +33,7 @@ export const fetchHourlyForecastForCity = createAsyncThunk(
     'cities/fetchHourlyForecast',
     async (city: string) => {
         const response = await axios.get(
-            `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
+            `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=425107192997d3e9ce6be2c05c915cef`
         );
         return response.data;
     }

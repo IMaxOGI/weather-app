@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/fetchInitialCities.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/fetchInitialCities.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
       <workItem from="1685130147519" duration="8237000" />
       <workItem from="1685287576459" duration="10384000" />
       <workItem from="1685304412040" duration="11194000" />
-      <workItem from="1685316904510" duration="22916000" />
+      <workItem from="1685316904510" duration="23472000" />
     </task>
     <task id="LOCAL-00001" summary="add initial components and store">
       <created>1685130369274</created>
@@ -164,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685376170944</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="some add and fix">
+      <created>1685376667740</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685376667740</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
