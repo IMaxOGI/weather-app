@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityCard/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityList/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityList/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/kelvinToCelsius.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/utils.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/slices/сitySlice.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +17,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="pages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

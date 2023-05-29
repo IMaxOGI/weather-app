@@ -88,7 +88,7 @@ const CityDetail = () => {
                         <Typography variant="h6" gutterBottom>
                             Hourly Forecast:
                         </Typography>
-                        <List sx={{ display: "flex" }}>
+                        <List sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'row' }}}>
                             {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
                                 <ListItem key={index}>
                                     <ListItemText
