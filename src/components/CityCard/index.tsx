@@ -53,12 +53,12 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
     const tempMax = kelvinToCelsius(city.main.temp_max);
 
     return (
-        <Card onClick={handleClick} sx={{ minWidth: 275, marginTop: "15px", cursor: 'pointer' }}>
+        <Card onClick={handleClick} sx={{ minWidth: 275, marginTop: "15px", cursor: 'pointer', backgroundColor: '#1e213a', color: '#e7e7eb', borderRadius: '1em' }}>
             <CardContent>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: '#e7e7eb' }}>
                     {city.name} ({timeString})
                 </Typography>
-                <Typography variant="body2" gutterBottom>
+                <Typography variant="body2" gutterBottom sx={{ marginBottom: 2, color: '#a09fb1' }}>
                     Weather: {city.weather[0].description}
                 </Typography>
                 <Box display="flex" flexDirection="column">
@@ -68,11 +68,11 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
                     <Typography variant="body2">
                         Max Temperature: {tempMax.toFixed(2)}°C
                     </Typography>
-                    <Box sx={{ marginTop: 1 }}>
-                        <Button variant="outlined" onClick={handleUpdate} sx={{ marginRight: 1 }}>
+                    <Box sx={{ marginTop: 2 }}>
+                        <Button variant="outlined" onClick={handleUpdate} sx={{ marginRight: 1, borderColor: '#e7e7eb', color: '#e7e7eb' }}>
                             Update
                         </Button>
-                        <Button variant="outlined" onClick={handleRemove}>
+                        <Button variant="outlined" onClick={handleRemove} sx={{ borderColor: '#e7e7eb', color: '#e7e7eb' }}>
                             Remove
                         </Button>
                     </Box>

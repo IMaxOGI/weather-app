@@ -14,7 +14,5 @@ export const saveState = (state: any): void => {
     try {
         const serializedState = JSON.stringify(state.city.cities);
         localStorage.setItem('cities', serializedState);
-    } catch {
-        // ignore write errors
-    }
+    } catch {console.error('Update failed')}
 };

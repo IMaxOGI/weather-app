@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Typography, Card, CardContent, Box, List, ListItem, ListItemText } from '@mui/material';
+import { Typography, Card, CardContent, Box, Grid, List, ListItem, ListItemText } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../services/store';
@@ -38,66 +38,71 @@ const CityDetail = () => {
     const tempMax = kelvinToCelsius(city.main.temp_max);
 
     return (
-        <Card sx={{ minWidth: 275, marginTop: 2 }}>
-            <CardContent>
-                <Typography variant="h5" gutterBottom>
+        <Card sx={{ minWidth: 275, marginTop: 2, backgroundColor: '#1e213a', color: '#e7e7eb', borderRadius: '1em' }}>
+            <CardContent sx={{ padding: 3 }}>
+                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', marginBottom: 2, color: '#e7e7eb' }}>
                     {city.name} ({timeString})
                 </Typography>
-                <Typography variant="subtitle1" gutterBottom>
+                <Typography variant="subtitle1" gutterBottom sx={{ marginBottom: 2, color: '#a09fb1' }}>
                     Weather: {city.weather[0].description}
                 </Typography>
-                <Box display="flex" justifyContent="space-between">
-                    <Typography variant="body2">
-                        Max Temperature: {tempMax.toFixed(2)}°C
-                    </Typography>
-                    <Typography variant="body2">
-                        Temperature: {temperature.toFixed(2)}°C
-                    </Typography>
-                </Box>
-                <Box display="flex" justifyContent="space-between">
-                    <Typography variant="body2">
-                        Min Temperature: {tempMin.toFixed(2)}°C
-                    </Typography>
-                    <Typography variant="body2">
-                        Feels Like: {feelsLike.toFixed(2)}°C
-                    </Typography>
-                </Box>
-                <Typography variant="body2">
+                <Grid container spacing={2} sx={{ marginBottom: 2 }}>
+                    <Grid item xs={6}>
+                        <Typography variant="body2">
+                            Max Temperature: {tempMax.toFixed(2)}°C
+                        </Typography>
+                        <Typography variant="body2">
+                            Min Temperature: {tempMin.toFixed(2)}°C
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={6} sx={{textAlign: "end"}}>
+                        <Typography variant="body2">
+                            Temperature: {temperature.toFixed(2)}°C
+                        </Typography>
+                        <Typography variant="body2">
+                            Feels Like: {feelsLike.toFixed(2)}°C
+                        </Typography>
+                    </Grid>
+                </Grid>
+                <Typography variant="body2" sx={{ marginBottom: 2 }}>
                     Pressure: {city.main.pressure} hPa
                 </Typography>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ marginBottom: 2 }}>
                     Humidity: {city.main.humidity}%
                 </Typography>
                 {city.wind && (
-                    <Typography variant="body2">
+                    <Typography variant="body2" sx={{ marginBottom: 2 }}>
                         Wind Speed: {city.wind.speed} m/s
                     </Typography>
                 )}
                 {city.wind && (
-                    <Typography variant="body2">
+                    <Typography variant="body2" sx={{ marginBottom: 2 }}>
                         Wind Direction: {city.wind.deg}°
                     </Typography>
                 )}
                 {city.clouds && (
-                    <Typography variant="body2">
+                    <Typography variant="body2" sx={{ marginBottom: 2 }}>
                         Cloudiness: {city.clouds.all}%
                     </Typography>
                 )}
-                <Box display="flex" flexDirection="column">
-                    <Box sx={{ marginTop: 3 }}>
-                        <Typography variant="h6" gutterBottom>
-                            Hourly Forecast:
-                        </Typography>
-                        <List sx={{ display: "flex", flexDirection: { xs: 'column', sm: 'row' }}}>
-                            {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
-                                <ListItem key={index}>
-                                    <ListItemText
-                                        primary={`${new Date(forecast.dt * 1000).toLocaleTimeString()}: ${kelvinToCelsius(forecast.main.temp).toFixed(2)}°C`}
-                                    />
-                                </ListItem>
-                            ))}
-                        </List>
-                    </Box>
+                <Box sx={{ marginTop: 3 }}>
+                    <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: '#e7e7eb' }}>
+                        Hourly Forecast:
+                    </Typography>
+                    <List sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, flexWrap: 'nowrap' }}>
+                        {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
+                            <ListItem key={index} sx={{ padding: 0, minWidth: { xs: 'auto', sm: 150 }, textAlign: 'center' }}>
+                                <ListItemText sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                                    <Typography variant="body2" color="text.white" sx={{ marginBottom: 1 }}>
+                                        {new Date(forecast.dt * 1000).toLocaleTimeString()}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.white">
+                                        {kelvinToCelsius(forecast.main.temp).toFixed(2)}°C
+                                    </Typography>
+                                </ListItemText>
+                            </ListItem>
+                        ))}
+                    </List>
                 </Box>
             </CardContent>
         </Card>

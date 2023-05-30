@@ -23,9 +23,8 @@ const AddCity = () => {
             />
             <Button
                 variant="contained"
-                color="primary"
                 onClick={handleAdd}
-                sx={{ minHeight: '100%', marginLeft: '8px' }}
+                sx={{ minHeight: '100%', marginLeft: '8px', backgroundColor: '#3c47e9', color: '#e7e7eb', borderRadius: '1em' }}
             >
                 Add
             </Button>
