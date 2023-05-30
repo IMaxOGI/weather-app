@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react';
 import { Typography, Card, CardContent, Box, Grid, List, ListItem, ListItemText } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../services/store';
 import { formatLocalTime, kelvinToCelsius } from "../../services/utils";
 import { fetchHourlyForecastForCity } from '../../services/slices/сitySlice';
 import { AppDispatch } from "../../services/store";
+import { IconButton } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 const CityDetail = () => {
     const dispatch: AppDispatch = useDispatch();
     const { city: cityName } = useParams<{ city: string }>();
+    const navigate = useNavigate();
     const city = useSelector((state: RootState) =>
         state.city.cities.find((city: any) => city.name === cityName)
     );
@@ -31,6 +34,10 @@ const CityDetail = () => {
         return <Typography variant="h5">City not found</Typography>;
     }
 
+    const goBack = () => {
+        navigate(-1);
+    };
+
     const timeString = formatLocalTime(city.timezone);
     const temperature = kelvinToCelsius(city.main.temp);
     const feelsLike = kelvinToCelsius(city.main.feels_like);
@@ -40,9 +47,14 @@ const CityDetail = () => {
     return (
         <Card sx={{ minWidth: 275, marginTop: 2, backgroundColor: '#1e213a', color: '#e7e7eb', borderRadius: '1em' }}>
             <CardContent sx={{ padding: 3 }}>
-                <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', marginBottom: 2, color: '#e7e7eb' }}>
-                    {city.name} ({timeString})
-                </Typography>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+                    <IconButton onClick={goBack} sx={{ color: '#e7e7eb', marginRight: 2 }} size="large">
+                        <ArrowBackIcon />
+                    </IconButton>
+                    <Typography variant="h5" gutterBottom sx={{ fontWeight: 'bold', marginBottom: 0, color: '#e7e7eb' }}>
+                        {city.name} ({timeString})
+                    </Typography>
+                </Box>
                 <Typography variant="subtitle1" gutterBottom sx={{ marginBottom: 2, color: '#a09fb1' }}>
                     Weather: {city.weather[0].description}
                 </Typography>

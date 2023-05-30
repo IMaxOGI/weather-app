@@ -53,7 +53,7 @@ const CityCard: React.FC<CityCardProps> = ({ city }) => {
     const tempMax = kelvinToCelsius(city.main.temp_max);
 
     return (
-        <Card onClick={handleClick} sx={{ minWidth: 275, marginTop: "15px", cursor: 'pointer', backgroundColor: '#1e213a', color: '#e7e7eb', borderRadius: '1em' }}>
+        <Card onClick={handleClick} sx={{ minWidth: 275, marginTop: "25px", cursor: 'pointer', backgroundColor: '#1e213a', color: '#e7e7eb', borderRadius: '1em' }}>
             <CardContent>
                 <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: '#e7e7eb' }}>
                     {city.name} ({timeString})
