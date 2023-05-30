@@ -97,24 +97,25 @@ const CityDetail = () => {
                         Cloudiness: {city.clouds.all}%
                     </Typography>
                 )}
+                ...
                 <Box sx={{ marginTop: 3 }}>
                     <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: '#e7e7eb' }}>
                         Hourly Forecast:
                     </Typography>
-                    <List sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, flexWrap: 'nowrap' }}>
+                    <Grid container spacing={2}>
                         {city.forecast && city.forecast.slice(0, 12).map((forecast: any, index: number) => (
-                            <ListItem key={index} sx={{ padding: 0, minWidth: { xs: 'auto', sm: 150 }, textAlign: 'center' }}>
-                                <ListItemText sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                            <Grid item xs={6} sm={1} key={index}>
+                                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                                     <Typography variant="body2" color="text.white" sx={{ marginBottom: 1 }}>
                                         {new Date(forecast.dt * 1000).toLocaleTimeString()}
                                     </Typography>
                                     <Typography variant="body2" color="text.white">
                                         {kelvinToCelsius(forecast.main.temp).toFixed(2)}°C
                                     </Typography>
-                                </ListItemText>
-                            </ListItem>
+                                </Box>
+                            </Grid>
                         ))}
-                    </List>
+                    </Grid>
                 </Box>
             </CardContent>
         </Card>

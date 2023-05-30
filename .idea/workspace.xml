@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddCity/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddCity/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityCard/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityCard/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CityDetail/index.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +14,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="pages_v3" />
+        <entry key="$PROJECT_DIR$" value="pages_v4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -36,7 +30,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1685446027" />
+                    <option name="lastUsedInstant" value="1685463108" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="pages_v2" />
