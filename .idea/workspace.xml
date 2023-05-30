@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="some add and fix" />
+    <list default="true" id="76a6e89c-4d47-445e-a79d-a96a81e754b6" name="Changes" comment="build">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddCity/AddCity.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddCity/AddCity.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddCity/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddCity/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -221,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685402808268</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="build">
+      <created>1685463132347</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685463132347</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +241,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add initial components and store" />
     <MESSAGE value="some add and fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="some add and fix" />
+    <MESSAGE value="build" />
+    <option name="LAST_COMMIT_MESSAGE" value="build" />
   </component>
 </project>

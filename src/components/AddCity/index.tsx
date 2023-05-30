@@ -27,7 +27,10 @@ const AddCity = () => {
         dispatch(fetchWeatherForCity(city))
             .unwrap()
             .then(() => setCity(""))
-            .catch((error) => setError("This city does not exist."));
+            .catch((error) => {
+                setError("This city does not exist.");
+                setCity("");
+            });
     };
 
     return (
