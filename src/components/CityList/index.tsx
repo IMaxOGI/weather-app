@@ -42,7 +42,7 @@ const CityList = () => {
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <AddCity />
-            <Grid container spacing={2} justifyContent="center">
+            <Grid container spacing={2} justifyContent="center" sx={{marginTop: "5px"}}>
                 {cities.map((city: CityData) => (
                     <Grid item key={city.id} xs={12} sm={6} md={4} lg={3}>
                         <CityCard city={city}/>

@@ -64,7 +64,7 @@ const AddCity = () => {
                 </Button>
             </Box>
             {error && (
-                <Typography variant="body2" color="error" sx={{ position: 'absolute', bottom: '-20px' }}>
+                <Typography variant="body2" color="error" sx={{ position: 'absolute', bottom: '-30px', left: '0px' }}>
                     {error}
                 </Typography>
             )}
