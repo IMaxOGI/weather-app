@@ -3,7 +3,7 @@ import { Button, TextField, Box, Typography } from '@mui/material';
 import { AppDispatch } from "../../services/store";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from '../../services/store';
-import { fetchWeatherForCity } from "../../services/slices/сitySlice";
+import { fetchWeatherForCity, updateCityWeather } from "../../services/slices/сitySlice";
 
 const AddCity = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -29,8 +29,13 @@ const AddCity = () => {
             .then(() => setCity(""))
             .catch((error) => {
                 setError("This city does not exist.");
-                setCity("");
             });
+    };
+
+    const handleUpdateAll = () => {
+        cities.forEach(city => {
+            dispatch(updateCityWeather(city.id));
+        });
     };
 
     return (
@@ -49,6 +54,13 @@ const AddCity = () => {
                     sx={{ minHeight: '100%', marginLeft: '8px', backgroundColor: '#3c47e9', color: '#e7e7eb', borderRadius: '1em' }}
                 >
                     Add
+                </Button>
+                <Button
+                    variant="contained"
+                    onClick={handleUpdateAll}
+                    sx={{ minHeight: '100%', marginLeft: '8px', backgroundColor: '#3c47e9', color: '#e7e7eb', borderRadius: '1em' }}
+                >
+                    Update All
                 </Button>
             </Box>
             {error && (
