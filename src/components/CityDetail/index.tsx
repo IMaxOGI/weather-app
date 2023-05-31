@@ -97,7 +97,6 @@ const CityDetail = () => {
                         Cloudiness: {city.clouds.all}%
                     </Typography>
                 )}
-                ...
                 <Box sx={{ marginTop: 3 }}>
                     <Typography variant="h6" gutterBottom sx={{ fontWeight: 'bold', color: '#e7e7eb' }}>
                         Hourly Forecast:
